@@ -57,9 +57,9 @@ android {
         buildConfig = true
     }
 
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+    // Explicitly set the Compose compiler version for stability
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.10"
     }
 }
 
@@ -81,14 +81,14 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Additional Compose and Lifecycle
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.1")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.2") // Updated
     implementation("androidx.savedstate:savedstate:1.2.1")
 
     // Networking: Retrofit for API calls and OkHttp for multipart uploads
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.retrofit2:retrofit:2.11.0") // Updated
+    implementation("com.squareup.retrofit2:converter-gson:2.11.0") // Updated
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 
     // Coroutines for asynchronous work
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1") // Updated
 }
